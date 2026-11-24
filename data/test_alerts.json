@@ -1,0 +1,1302 @@
+[
+  {
+    "type": "authentication",
+    "user": "john.d",
+    "src_ip": "203.0.113.59",
+    "description": "Successful login for 'john.d' from Chennai, then another from Frankfurt 20 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-001"
+  },
+  {
+    "type": "authentication",
+    "user": "divya.t",
+    "src_ip": "198.51.100.5",
+    "description": "Successful login for 'divya.t' from Mumbai, then another from Lagos 8 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-002"
+  },
+  {
+    "type": "authentication",
+    "user": "vikram.n",
+    "src_ip": "192.0.2.27",
+    "description": "304 failed logins for user 'vikram.n' from one external IP in 2 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-003"
+  },
+  {
+    "type": "identity",
+    "user": "priya.s",
+    "src_ip": "10.0.4.18",
+    "description": "Admin privileges granted to 'priya.s' at 3 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-004"
+  },
+  {
+    "type": "endpoint",
+    "user": "sana.f",
+    "src_ip": "10.0.5.24",
+    "description": "Word opened on DB-03 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-005"
+  },
+  {
+    "type": "email",
+    "user": "vikram.n",
+    "src_ip": "10.0.6.13",
+    "description": "Email from 'g00gle-docs.org' with urgent request to verify account. Look-alike domain. The user clicked the link but entered nothing.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "medium"
+    },
+    "category": "phishing",
+    "id": "T-006"
+  },
+  {
+    "type": "network",
+    "user": "lakshmi.p",
+    "src_ip": "10.0.5.35",
+    "description": "RDP session from DEV-WS-22 to FS-01, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-007"
+  },
+  {
+    "type": "email",
+    "user": "sana.f",
+    "src_ip": "10.0.4.35",
+    "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-008"
+  },
+  {
+    "type": "identity",
+    "user": "lakshmi.p",
+    "src_ip": "10.0.3.48",
+    "description": "Admin privileges granted to 'lakshmi.p' during the approved change window under ticket CHG-2697, approved by their manager.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "privilege_change",
+    "id": "T-009"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "203.0.113.34",
+    "description": "Successful login for 'priya.s' from Dallas, then another from Hanoi 13 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-010"
+  },
+  {
+    "type": "identity",
+    "user": "karthik.v",
+    "src_ip": "10.0.6.43",
+    "description": "Admin privileges granted to 'karthik.v' at 4 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-011"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "10.0.6.41",
+    "description": "4 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-012"
+  },
+  {
+    "type": "endpoint",
+    "user": "priya.s",
+    "src_ip": "10.0.1.34",
+    "description": "3911 files renamed with a .locked extension on WEB-05 within 6 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-013"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "192.0.2.36",
+    "description": "Successful login for 'priya.s' from Atlanta, then another from Moscow 6 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-014"
+  },
+  {
+    "type": "authentication",
+    "user": "admin",
+    "src_ip": "198.51.100.6",
+    "description": "357 failed logins for user 'admin' from one external IP in 2 minutes with no successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "medium"
+    },
+    "category": "brute_force",
+    "id": "T-015"
+  },
+  {
+    "type": "email",
+    "user": "sana.f",
+    "src_ip": "10.0.3.7",
+    "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-016"
+  },
+  {
+    "type": "authentication",
+    "user": "vikram.n",
+    "src_ip": "192.0.2.10",
+    "description": "Successful login for 'vikram.n' from Chennai, then another from Frankfurt 10 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-017"
+  },
+  {
+    "type": "authentication",
+    "user": "john.d",
+    "src_ip": "192.0.2.3",
+    "description": "339 failed logins for user 'john.d' from one external IP in 5 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-018"
+  },
+  {
+    "type": "network",
+    "user": "svc-admin",
+    "src_ip": "10.0.2.7",
+    "description": "SSH session from the approved jump host to FIN-APP-02 during a scheduled maintenance window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "remote_services",
+    "id": "T-019"
+  },
+  {
+    "type": "network",
+    "user": "priya.s",
+    "src_ip": "10.0.6.54",
+    "description": "RDP session from FS-01 to FIN-APP-02, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-020"
+  },
+  {
+    "type": "authentication",
+    "user": "divya.t",
+    "src_ip": "203.0.113.56",
+    "description": "Logins for 'divya.t' from Bengaluru and Sao Paulo within minutes; the second came from the corporate VPN exit node in Sao Paulo.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-021"
+  },
+  {
+    "type": "endpoint",
+    "user": "priya.s",
+    "src_ip": "10.0.7.17",
+    "description": "5983 files renamed with a .locked extension on DEV-WS-22 within 6 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-022"
+  },
+  {
+    "type": "email",
+    "user": "divya.t",
+    "src_ip": "10.0.2.28",
+    "description": "User clicked a link in the company's own phishing-awareness simulation email from the security team.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "phishing",
+    "id": "T-023"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-backup",
+    "src_ip": "10.0.7.59",
+    "description": "2295 files renamed with a .bak extension on FS-01 by the nightly backup job during its scheduled window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "ransomware",
+    "id": "T-024"
+  },
+  {
+    "type": "endpoint",
+    "user": "ravi.k",
+    "src_ip": "10.0.5.21",
+    "description": "Word opened on FS-01 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-025"
+  },
+  {
+    "type": "authentication",
+    "user": "vikram.n",
+    "src_ip": "192.0.2.33",
+    "description": "180 failed logins for user 'vikram.n' from one external IP in 10 minutes with no successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "medium"
+    },
+    "category": "brute_force",
+    "id": "T-026"
+  },
+  {
+    "type": "authentication",
+    "user": "divya.t",
+    "src_ip": "203.0.113.56",
+    "description": "Successful login for 'divya.t' from Dallas, then another from Hanoi 32 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-027"
+  },
+  {
+    "type": "email",
+    "user": "lakshmi.p",
+    "src_ip": "10.0.6.29",
+    "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-028"
+  },
+  {
+    "type": "identity",
+    "user": "priya.s",
+    "src_ip": "10.0.7.55",
+    "description": "Admin privileges granted to 'priya.s' during the approved change window under ticket CHG-3546, approved by their manager.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "privilege_change",
+    "id": "T-029"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-deploy",
+    "src_ip": "10.0.4.56",
+    "description": "PowerShell script run on FS-01 by the approved software deployment service during the scheduled patch window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "powershell",
+    "id": "T-030"
+  },
+  {
+    "type": "endpoint",
+    "user": "meena.r",
+    "src_ip": "10.0.7.47",
+    "description": "Excel macro on DB-03 spawned cmd.exe, which ran PowerShell with a base64-encoded payload.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-031"
+  },
+  {
+    "type": "authentication",
+    "user": "svc-finance",
+    "src_ip": "198.51.100.30",
+    "description": "204 failed logins for user 'svc-finance' from one external IP in 5 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-032"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "203.0.113.25",
+    "description": "74 failed logins for user 'priya.s' from one external IP in 10 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-033"
+  },
+  {
+    "type": "email",
+    "user": "john.d",
+    "src_ip": "10.0.2.7",
+    "description": "User clicked a link in the company's own phishing-awareness simulation email from the security team.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "phishing",
+    "id": "T-034"
+  },
+  {
+    "type": "authentication",
+    "user": "admin",
+    "src_ip": "198.51.100.18",
+    "description": "128 failed logins for user 'admin' from one external IP in 2 minutes with no successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "medium"
+    },
+    "category": "brute_force",
+    "id": "T-035"
+  },
+  {
+    "type": "network",
+    "user": "arun.m",
+    "src_ip": "10.0.7.26",
+    "description": "RDP session from DEV-WS-22 to FS-01, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-036"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "198.51.100.32",
+    "description": "82 failed logins for user 'priya.s' from one external IP in 2 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-037"
+  },
+  {
+    "type": "authentication",
+    "user": "vikram.n",
+    "src_ip": "198.51.100.6",
+    "description": "Logins for 'vikram.n' from Bengaluru and Sao Paulo within minutes; the second came from the corporate VPN exit node in Sao Paulo.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-038"
+  },
+  {
+    "type": "network",
+    "user": "lakshmi.p",
+    "src_ip": "10.0.7.36",
+    "description": "RDP session from DEV-WS-22 to DB-03, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-039"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-backup",
+    "src_ip": "10.0.1.30",
+    "description": "1798 files renamed with a .locked extension on WEB-05 within 7 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-040"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-deploy",
+    "src_ip": "10.0.4.39",
+    "description": "IT admin ran a signed maintenance script on FIN-APP-02 from the management server under change ticket CHG-5345.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "powershell",
+    "id": "T-041"
+  },
+  {
+    "type": "email",
+    "user": "divya.t",
+    "src_ip": "10.0.5.44",
+    "description": "User opened a link in an email from 'docusign.com' (verified sender, SPF and DKIM pass) about a scheduled document signature.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "phishing",
+    "id": "T-042"
+  },
+  {
+    "type": "authentication",
+    "user": "lakshmi.p",
+    "src_ip": "198.51.100.46",
+    "description": "Successful login for 'lakshmi.p' from Mumbai, then another from Lagos 24 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-043"
+  },
+  {
+    "type": "endpoint",
+    "user": "priya.s",
+    "src_ip": "10.0.2.48",
+    "description": "Word opened on HR-LAP-14 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-044"
+  },
+  {
+    "type": "identity",
+    "user": "ravi.k",
+    "src_ip": "10.0.3.30",
+    "description": "Admin privileges granted to 'ravi.k' during the approved change window under ticket CHG-2891, approved by their manager.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "privilege_change",
+    "id": "T-045"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-deploy",
+    "src_ip": "10.0.1.35",
+    "description": "IT admin ran a signed maintenance script on DB-03 from the management server under change ticket CHG-3697.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "powershell",
+    "id": "T-046"
+  },
+  {
+    "type": "authentication",
+    "user": "divya.t",
+    "src_ip": "10.0.6.57",
+    "description": "5 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-047"
+  },
+  {
+    "type": "email",
+    "user": "arun.m",
+    "src_ip": "10.0.6.59",
+    "description": "Email from 'g00gle-docs.org' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-048"
+  },
+  {
+    "type": "email",
+    "user": "ravi.k",
+    "src_ip": "10.0.8.6",
+    "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-049"
+  },
+  {
+    "type": "endpoint",
+    "user": "meena.r",
+    "src_ip": "10.0.6.6",
+    "description": "Word opened on DEV-WS-22 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-050"
+  },
+  {
+    "type": "identity",
+    "user": "karthik.v",
+    "src_ip": "10.0.5.44",
+    "description": "Admin privileges granted to 'karthik.v' at 3 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-051"
+  },
+  {
+    "type": "authentication",
+    "user": "sana.f",
+    "src_ip": "192.0.2.25",
+    "description": "144 failed logins for user 'sana.f' from one external IP in 3 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-052"
+  },
+  {
+    "type": "endpoint",
+    "user": "priya.s",
+    "src_ip": "10.0.5.5",
+    "description": "Excel macro on DEV-WS-22 spawned cmd.exe, which ran PowerShell with a base64-encoded payload.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-053"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-deploy",
+    "src_ip": "10.0.8.5",
+    "description": "PowerShell script run on FIN-APP-02 by the approved software deployment service during the scheduled patch window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "powershell",
+    "id": "T-054"
+  },
+  {
+    "type": "authentication",
+    "user": "lakshmi.p",
+    "src_ip": "192.0.2.32",
+    "description": "Logins for 'lakshmi.p' from Mumbai and Lagos within minutes; the second came from the corporate VPN exit node in Lagos.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-055"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-deploy",
+    "src_ip": "10.0.5.33",
+    "description": "PowerShell script run on DB-03 by the approved software deployment service during the scheduled patch window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "powershell",
+    "id": "T-056"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-backup",
+    "src_ip": "10.0.1.42",
+    "description": "4832 files renamed with a .bak extension on FS-01 by the nightly backup job during its scheduled window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "ransomware",
+    "id": "T-057"
+  },
+  {
+    "type": "endpoint",
+    "user": "divya.t",
+    "src_ip": "10.0.7.11",
+    "description": "1451 files renamed with a .locked extension on WEB-05 within 3 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-058"
+  },
+  {
+    "type": "email",
+    "user": "meena.r",
+    "src_ip": "10.0.5.59",
+    "description": "Email from 'micros0ft-support.com' with urgent request to verify account. Look-alike domain. The user clicked the link but entered nothing.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "medium"
+    },
+    "category": "phishing",
+    "id": "T-059"
+  },
+  {
+    "type": "endpoint",
+    "user": "lakshmi.p",
+    "src_ip": "10.0.2.21",
+    "description": "Excel macro on DB-03 spawned cmd.exe, which ran PowerShell with a base64-encoded payload.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-060"
+  },
+  {
+    "type": "network",
+    "user": "meena.r",
+    "src_ip": "10.0.1.6",
+    "description": "RDP session from DB-03 to FS-01, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-061"
+  },
+  {
+    "type": "authentication",
+    "user": "arun.m",
+    "src_ip": "10.0.1.56",
+    "description": "2 failed logins for 'arun.m' from a known internal workstation after a password change; login then succeeded.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-062"
+  },
+  {
+    "type": "authentication",
+    "user": "karthik.v",
+    "src_ip": "10.0.4.21",
+    "description": "3 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-063"
+  },
+  {
+    "type": "endpoint",
+    "user": "priya.s",
+    "src_ip": "10.0.8.33",
+    "description": "Word opened on DB-03 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-064"
+  },
+  {
+    "type": "network",
+    "user": "svc-admin",
+    "src_ip": "10.0.6.17",
+    "description": "SSH session from the approved jump host to DB-03 during a scheduled maintenance window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "remote_services",
+    "id": "T-065"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "198.51.100.4",
+    "description": "Logins for 'priya.s' from Dallas and Hanoi within minutes; the second came from the corporate VPN exit node in Hanoi.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-066"
+  },
+  {
+    "type": "identity",
+    "user": "contractor.a",
+    "src_ip": "10.0.4.29",
+    "description": "Admin privileges granted to 'contractor.a' at 3 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-067"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-backup",
+    "src_ip": "10.0.5.19",
+    "description": "2228 files renamed with a .bak extension on FS-01 by the nightly backup job during its scheduled window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "ransomware",
+    "id": "T-068"
+  },
+  {
+    "type": "email",
+    "user": "ravi.k",
+    "src_ip": "10.0.6.36",
+    "description": "User clicked a link in the company's own phishing-awareness simulation email from the security team.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "phishing",
+    "id": "T-069"
+  },
+  {
+    "type": "identity",
+    "user": "priya.s",
+    "src_ip": "10.0.5.9",
+    "description": "Admin privileges granted to 'priya.s' at 3 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-070"
+  },
+  {
+    "type": "network",
+    "user": "divya.t",
+    "src_ip": "10.0.2.32",
+    "description": "RDP session from FS-01 to HR-LAP-14, two machines that have never connected before, at 2 AM.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1021",
+      "severity": "medium"
+    },
+    "category": "remote_services",
+    "id": "T-071"
+  },
+  {
+    "type": "authentication",
+    "user": "admin",
+    "src_ip": "192.0.2.18",
+    "description": "Successful login for 'admin' from Atlanta, then another from Moscow 33 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "impossible_travel",
+    "id": "T-072"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-backup",
+    "src_ip": "10.0.7.5",
+    "description": "3751 files renamed with a .bak extension on FS-01 by the nightly backup job during its scheduled window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "ransomware",
+    "id": "T-073"
+  },
+  {
+    "type": "authentication",
+    "user": "arun.m",
+    "src_ip": "192.0.2.29",
+    "description": "141 failed logins for user 'arun.m' from one external IP in 4 minutes with no successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "medium"
+    },
+    "category": "brute_force",
+    "id": "T-074"
+  },
+  {
+    "type": "identity",
+    "user": "sana.f",
+    "src_ip": "10.0.1.42",
+    "description": "Admin privileges granted to 'sana.f' at 2 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-075"
+  },
+  {
+    "type": "email",
+    "user": "john.d",
+    "src_ip": "10.0.3.21",
+    "description": "Email from 'paypa1-secure.net' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-076"
+  },
+  {
+    "type": "email",
+    "user": "arun.m",
+    "src_ip": "10.0.3.56",
+    "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user clicked the link but entered nothing.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "medium"
+    },
+    "category": "phishing",
+    "id": "T-077"
+  },
+  {
+    "type": "email",
+    "user": "divya.t",
+    "src_ip": "10.0.5.7",
+    "description": "Email from 'hr-payrol1.co' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-078"
+  },
+  {
+    "type": "network",
+    "user": "svc-admin",
+    "src_ip": "10.0.7.28",
+    "description": "SSH session from the approved jump host to FIN-APP-02 during a scheduled maintenance window.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "remote_services",
+    "id": "T-079"
+  },
+  {
+    "type": "identity",
+    "user": "dev.intern",
+    "src_ip": "10.0.6.48",
+    "description": "Admin privileges granted to 'dev.intern' at 11 PM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-080"
+  },
+  {
+    "type": "endpoint",
+    "user": "john.d",
+    "src_ip": "10.0.2.47",
+    "description": "Word opened on DB-03 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-081"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-finance",
+    "src_ip": "10.0.6.21",
+    "description": "4653 files renamed with a .locked extension on HR-LAP-14 within 8 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-082"
+  },
+  {
+    "type": "identity",
+    "user": "vikram.n",
+    "src_ip": "10.0.7.16",
+    "description": "Admin privileges granted to 'vikram.n' at 2 AM, outside any change window, with no ticket.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "privilege_change",
+    "id": "T-083"
+  },
+  {
+    "type": "authentication",
+    "user": "john.d",
+    "src_ip": "10.0.6.55",
+    "description": "4 failed logins for 'john.d' from a known internal workstation after a password change; login then succeeded.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-084"
+  },
+  {
+    "type": "email",
+    "user": "ravi.k",
+    "src_ip": "10.0.7.44",
+    "description": "Email from 'g00gle-docs.org' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-085"
+  },
+  {
+    "type": "email",
+    "user": "meena.r",
+    "src_ip": "10.0.2.31",
+    "description": "Email from 'micros0ft-support.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1566",
+      "severity": "high"
+    },
+    "category": "phishing",
+    "id": "T-086"
+  },
+  {
+    "type": "authentication",
+    "user": "lakshmi.p",
+    "src_ip": "203.0.113.3",
+    "description": "Successful login for 'lakshmi.p' from Mumbai, then another from Lagos 19 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "medium"
+    },
+    "category": "impossible_travel",
+    "id": "T-087"
+  },
+  {
+    "type": "identity",
+    "user": "divya.t",
+    "src_ip": "10.0.3.39",
+    "description": "Admin privileges granted to 'divya.t' during the approved change window under ticket CHG-4450, approved by their manager.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "privilege_change",
+    "id": "T-088"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "198.51.100.2",
+    "description": "Logins for 'priya.s' from Chennai and Frankfurt within minutes; the second came from the corporate VPN exit node in Frankfurt.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-089"
+  },
+  {
+    "type": "authentication",
+    "user": "admin",
+    "src_ip": "203.0.113.44",
+    "description": "Successful login for 'admin' from Bengaluru, then another from Sao Paulo 40 minutes later. No VPN in use.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1078",
+      "severity": "high"
+    },
+    "category": "impossible_travel",
+    "id": "T-090"
+  },
+  {
+    "type": "authentication",
+    "user": "john.d",
+    "src_ip": "198.51.100.52",
+    "description": "172 failed logins for user 'john.d' from one external IP in 1 minutes with no successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "medium"
+    },
+    "category": "brute_force",
+    "id": "T-091"
+  },
+  {
+    "type": "authentication",
+    "user": "arun.m",
+    "src_ip": "10.0.2.33",
+    "description": "6 failed logins for 'arun.m' from a known internal workstation after a password change; login then succeeded.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-092"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-finance",
+    "src_ip": "10.0.7.5",
+    "description": "Word opened on DEV-WS-22 and launched PowerShell with an encoded command.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1059",
+      "severity": "high"
+    },
+    "category": "powershell",
+    "id": "T-093"
+  },
+  {
+    "type": "authentication",
+    "user": "meena.r",
+    "src_ip": "10.0.3.12",
+    "description": "4 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-094"
+  },
+  {
+    "type": "endpoint",
+    "user": "svc-finance",
+    "src_ip": "10.0.6.34",
+    "description": "2112 files renamed with a .locked extension on FIN-APP-02 within 4 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-095"
+  },
+  {
+    "type": "endpoint",
+    "user": "ravi.k",
+    "src_ip": "10.0.4.42",
+    "description": "5947 files renamed with a .locked extension on HR-LAP-14 within 5 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-096"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "198.51.100.28",
+    "description": "Logins for 'priya.s' from Chennai and Frankfurt within minutes; the second came from the corporate VPN exit node in Frankfurt.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "impossible_travel",
+    "id": "T-097"
+  },
+  {
+    "type": "authentication",
+    "user": "priya.s",
+    "src_ip": "192.0.2.36",
+    "description": "131 failed logins for user 'priya.s' from one external IP in 9 minutes followed by a successful login.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1110",
+      "severity": "high"
+    },
+    "category": "brute_force",
+    "id": "T-098"
+  },
+  {
+    "type": "endpoint",
+    "user": "sana.f",
+    "src_ip": "10.0.2.30",
+    "description": "8611 files renamed with a .locked extension on FIN-APP-02 within 10 minutes. A ransom note file appeared.",
+    "expected": {
+      "is_false_positive": false,
+      "technique": "T1486",
+      "severity": "critical"
+    },
+    "category": "ransomware",
+    "id": "T-099"
+  },
+  {
+    "type": "authentication",
+    "user": "sana.f",
+    "src_ip": "10.0.3.32",
+    "description": "4 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password.",
+    "expected": {
+      "is_false_positive": true,
+      "technique": null,
+      "severity": "low"
+    },
+    "category": "brute_force",
+    "id": "T-100"
+  }
+]

@@ -1,0 +1,302 @@
+[
+ {
+  "id": "E-1",
+  "type": "authentication",
+  "user": "admin",
+  "src_ip": "192.0.2.99",
+  "description": "300 failed logins for 'admin' from one external IP in 5 minutes, no successful login.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1110"
+  }
+ },
+ {
+  "id": "E-2",
+  "type": "authentication",
+  "user": "ravi.k",
+  "src_ip": "10.0.1.22",
+  "description": "3 failed logins over an hour from the office network, then a success. User says they typed the wrong password after a holiday.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": "T1110"
+  }
+ },
+ {
+  "id": "E-3",
+  "type": "email",
+  "user": "meena.r",
+  "src_ip": "10.0.2.15",
+  "description": "40 employees received an urgent invoice email from 'paypa1-billing.net'. User meena.r clicked the link and entered credentials.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1566"
+  }
+ },
+ {
+  "id": "E-4",
+  "type": "email",
+  "user": "priya.s",
+  "src_ip": "10.0.2.18",
+  "description": "User reported a suspicious email from 'hr-benefits-update.co' but did not click anything. Email reached 2 mailboxes.",
+  "expected": {
+   "escalate": false,
+   "false_positive": false,
+   "technique": "T1566"
+  }
+ },
+ {
+  "id": "E-5",
+  "type": "endpoint",
+  "user": "svc-finance",
+  "src_ip": "10.0.8.31",
+  "description": "Excel on FIN-APP-02 spawned cmd.exe which ran certutil to download a file from an unknown external site.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1059"
+  }
+ },
+ {
+  "id": "E-6",
+  "type": "endpoint",
+  "user": "dev.intern",
+  "src_ip": "10.0.3.9",
+  "description": "PowerShell script restarted IIS on DEV-WEB-01 during approved maintenance window, change ticket CHG-4521.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-7",
+  "type": "endpoint",
+  "user": "svc-backup",
+  "src_ip": "10.0.8.40",
+  "description": "2,000 files modified and renamed with .encrypted extension; README_DECRYPT.txt ransom note created on the file server.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1486"
+  }
+ },
+ {
+  "id": "E-8",
+  "type": "endpoint",
+  "user": "svc-backup",
+  "src_ip": "10.0.8.40",
+  "description": "Nightly backup job modified 5,000 files in the archive folder during the scheduled 02:00 backup window.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-9",
+  "type": "identity",
+  "user": "priya.s",
+  "src_ip": "198.51.100.77",
+  "description": "Login from Chennai then Frankfurt 20 minutes later. User confirmed she was connected through the company VPN.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": "T1078"
+  }
+ },
+ {
+  "id": "E-10",
+  "type": "identity",
+  "user": "admin",
+  "src_ip": "203.0.113.45",
+  "description": "Administrator logged in at 3 AM from an external IP never seen before.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1078"
+  }
+ },
+ {
+  "id": "E-11",
+  "type": "network",
+  "user": "none",
+  "src_ip": "10.0.5.20",
+  "description": "Port scan from 10.0.5.20, the approved vulnerability scanner, during its scheduled weekly window.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-12",
+  "type": "network",
+  "user": "none",
+  "src_ip": "10.0.6.14",
+  "description": "Internal host 10.0.6.14 scanned ports across 200 servers in 5 minutes. Host is not on the approved scanner list.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-13",
+  "type": "network",
+  "user": "none",
+  "src_ip": "192.0.2.99",
+  "description": "External IP scanned all ports on the public web server.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-14",
+  "type": "identity",
+  "user": "dev.intern",
+  "src_ip": "10.0.3.9",
+  "description": "Admin privileges granted to 'dev.intern' at 3 AM, outside any change window, with no ticket.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1078"
+  }
+ },
+ {
+  "id": "E-15",
+  "type": "identity",
+  "user": "ravi.k",
+  "src_ip": "10.0.1.22",
+  "description": "Admin rights granted to ravi.k under approved change ticket CHG-5001, signed off by his manager, inside the change window.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-16",
+  "type": "authentication",
+  "user": "admin",
+  "src_ip": "10.0.8.31",
+  "description": "Administrator RDP login from FIN-APP-02 to the domain controller DC-01. These servers normally never connect to each other.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1021"
+  }
+ },
+ {
+  "id": "E-17",
+  "type": "authentication",
+  "user": "meena.r",
+  "src_ip": "10.0.1.50",
+  "description": "5 failed logins over 40 minutes from the office network right after a password reset, then one success.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": "T1110"
+  }
+ },
+ {
+  "id": "E-18",
+  "type": "email",
+  "user": "meena.r",
+  "src_ip": "10.0.2.15",
+  "description": "Filter flagged the monthly IT newsletter from it-notices@company.com because of link tracking. Sender verified as internal.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-19",
+  "type": "endpoint",
+  "user": "svc-finance",
+  "src_ip": "10.0.8.31",
+  "description": "Scheduled task 'MonthlyReport' ran a signed PowerShell script with an encoded command, as it does on the first of every month.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": "T1059"
+  }
+ },
+ {
+  "id": "E-20",
+  "type": "authentication",
+  "user": "j.smith",
+  "src_ip": "192.0.2.99",
+  "description": "10 failed logins for 'j.smith' from an external IP at 4 AM, followed by a successful login.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1110"
+  }
+ },
+ {
+  "id": "E-21",
+  "type": "authentication",
+  "user": "admin",
+  "src_ip": "10.0.1.5",
+  "description": "One failed login each against 200 different accounts from a single internal host in 10 minutes.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1110"
+  }
+ },
+ {
+  "id": "E-22",
+  "type": "endpoint",
+  "user": "meena.r",
+  "src_ip": "10.0.2.15",
+  "description": "Antivirus detected the EICAR test file on the laptop during the scheduled security awareness training.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-23",
+  "type": "email",
+  "user": "priya.s",
+  "src_ip": "10.0.2.18",
+  "description": "Email from 'ceo-urgent@company-payments.com' asked finance to wire money. Priya replied with company bank details.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1566"
+  }
+ },
+ {
+  "id": "E-24",
+  "type": "identity",
+  "user": "priya.s",
+  "src_ip": "10.0.2.18",
+  "description": "User changed her own password through the self-service portal with MFA during working hours.",
+  "expected": {
+   "escalate": false,
+   "false_positive": true,
+   "technique": null
+  }
+ },
+ {
+  "id": "E-25",
+  "type": "endpoint",
+  "user": "svc-backup",
+  "src_ip": "10.0.8.40",
+  "description": "vssadmin deleted all shadow copies on the file server, then 1,500 files were renamed within 3 minutes.",
+  "expected": {
+   "escalate": true,
+   "false_positive": false,
+   "technique": "T1486"
+  }
+ }
+]

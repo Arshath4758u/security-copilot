@@ -1,0 +1,9 @@
+{
+  "admin":       {"role": "Domain administrator", "privileged": true,  "mfa": false, "department": "IT"},
+  "meena.r":     {"role": "HR executive",         "privileged": false, "mfa": true,  "department": "HR"},
+  "priya.s":     {"role": "Finance analyst",      "privileged": false, "mfa": true,  "department": "Finance", "uses_vpn": true},
+  "svc-finance": {"role": "Service account",      "privileged": true,  "mfa": false, "department": "Finance"},
+  "svc-backup":  {"role": "Service account",      "privileged": true,  "mfa": false, "department": "IT"},
+  "ravi.k":      {"role": "Support engineer",     "privileged": false, "mfa": true,  "department": "Support"},
+  "dev.intern":  {"role": "Intern developer",     "privileged": false, "mfa": true,  "department": "Engineering"}
+}

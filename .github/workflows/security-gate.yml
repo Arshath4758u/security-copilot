@@ -1,0 +1,12 @@
+name: security-gate
+on: [push, pull_request]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pydantic ollama
+      # --no-llm: CI runners have no Ollama or gitleaks; the built-in regex scan still gates the pipeline
+      - run: python -m scripts.ci_scan . --no-llm --no-external

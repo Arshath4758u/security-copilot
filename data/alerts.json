@@ -1,0 +1,18 @@
+[
+  {"id": "A-1001", "type": "authentication", "user": "admin", "src_ip": "203.0.113.45",
+   "description": "52 failed logins for user 'admin' from one IP in 2 minutes, followed by a successful login."},
+  {"id": "A-1002", "type": "email", "user": "meena.r", "src_ip": "10.0.2.15",
+   "description": "User clicked a link in an email from 'micros0ft-support.com' asking to verify their password."},
+  {"id": "A-1003", "type": "authentication", "user": "priya.s", "src_ip": "198.51.100.77",
+   "description": "Successful login from Chennai, then another from Frankfurt 20 minutes later for the same user."},
+  {"id": "A-1004", "type": "endpoint", "user": "svc-finance", "src_ip": "10.0.8.31",
+   "description": "Word opened on FIN-APP-02 and launched PowerShell with an encoded command."},
+  {"id": "A-1005", "type": "endpoint", "user": "svc-backup", "src_ip": "10.0.8.40",
+   "description": "3,400 files renamed with a .locked extension on the file server within 4 minutes."},
+  {"id": "A-1006", "type": "authentication", "user": "ravi.k", "src_ip": "10.0.1.22",
+   "description": "6 failed logins over 30 minutes from the office network, then a successful login. User later reported forgetting the password."},
+  {"id": "A-1007", "type": "network", "user": "none", "src_ip": "10.0.5.20",
+   "description": "Port scan detected from internal host 10.0.5.20, which is the approved vulnerability scanner, during its scheduled weekly scan."},
+  {"id": "A-1008", "type": "identity", "user": "dev.intern", "src_ip": "10.0.3.9",
+   "description": "Admin privileges granted to user 'dev.intern' at 3 AM, outside any change window, with no ticket."}
+]

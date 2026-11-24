@@ -1,0 +1,1027 @@
+{
+  "model": "llama3",
+  "file": "data/test_alerts.json",
+  "alerts": 54,
+  "llm_errors": 0,
+  "real_threats": 38,
+  "harmless": 16,
+  "false_positive_accuracy": "78%",
+  "false_negatives": "0 of 38",
+  "missed_escalations": "3 of 23",
+  "false_positives": "12 of 16",
+  "false_escalations": "3 of 16",
+  "technique_accuracy": "84%",
+  "severity_exact": "79%",
+  "per_category": {
+    "brute_force": {
+      "alerts": 11,
+      "fp_accuracy": "100%",
+      "false_negatives": 0
+    },
+    "impossible_travel": {
+      "alerts": 9,
+      "fp_accuracy": "78%",
+      "false_negatives": 0
+    },
+    "phishing": {
+      "alerts": 9,
+      "fp_accuracy": "67%",
+      "false_negatives": 0
+    },
+    "powershell": {
+      "alerts": 10,
+      "fp_accuracy": "80%",
+      "false_negatives": 0
+    },
+    "privilege_change": {
+      "alerts": 6,
+      "fp_accuracy": "50%",
+      "false_negatives": 0
+    },
+    "ransomware": {
+      "alerts": 4,
+      "fp_accuracy": "75%",
+      "false_negatives": 0
+    },
+    "remote_services": {
+      "alerts": 5,
+      "fp_accuracy": "80%",
+      "false_negatives": 0
+    }
+  },
+  "seconds_per_alert": 4.2,
+  "details": [
+    {
+      "id": "T-001",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'john.d' from Chennai, then another from Frankfurt 20 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-002",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Successful login for 'divya.t' from Mumbai, then another from Lagos 8 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-003",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "304 failed logins for user 'vikram.n' from one external IP in 2 minutes followed by a successful login."
+    },
+    {
+      "id": "T-004",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1078",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1078",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Admin privileges granted to 'priya.s' at 3 AM, outside any change window, with no ticket."
+    },
+    {
+      "id": "T-005",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Word opened on DB-03 and launched PowerShell with an encoded command."
+    },
+    {
+      "id": "T-006",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1566",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Email from 'g00gle-docs.org' with urgent request to verify account. Look-alike domain. The user clicked the link but entered nothing."
+    },
+    {
+      "id": "T-007",
+      "category": "remote_services",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1021",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1021",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "RDP session from DEV-WS-22 to FS-01, two machines that have never connected before, at 2 AM."
+    },
+    {
+      "id": "T-008",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1566",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page."
+    },
+    {
+      "id": "T-009",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": null,
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Admin privileges granted to 'lakshmi.p' during the approved change window under ticket CHG-2697, approved by their manager."
+    },
+    {
+      "id": "T-010",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'priya.s' from Dallas, then another from Hanoi 13 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-011",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1078",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1078",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Admin privileges granted to 'karthik.v' at 4 AM, outside any change window, with no ticket."
+    },
+    {
+      "id": "T-012",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": true,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.8
+      },
+      "description": "4 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password."
+    },
+    {
+      "id": "T-013",
+      "category": "ransomware",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1486",
+        "severity": "critical"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1486",
+        "severity": "critical",
+        "confidence": 0.9
+      },
+      "description": "3911 files renamed with a .locked extension on WEB-05 within 6 minutes. A ransom note file appeared."
+    },
+    {
+      "id": "T-014",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1078",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'priya.s' from Atlanta, then another from Moscow 6 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-015",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1110",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "357 failed logins for user 'admin' from one external IP in 2 minutes with no successful login."
+    },
+    {
+      "id": "T-016",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1566",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page."
+    },
+    {
+      "id": "T-017",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'vikram.n' from Chennai, then another from Frankfurt 10 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-018",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.8
+      },
+      "description": "339 failed logins for user 'john.d' from one external IP in 5 minutes followed by a successful login."
+    },
+    {
+      "id": "T-019",
+      "category": "remote_services",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": null,
+        "severity": "low",
+        "confidence": 0.8
+      },
+      "description": "SSH session from the approved jump host to FIN-APP-02 during a scheduled maintenance window."
+    },
+    {
+      "id": "T-020",
+      "category": "remote_services",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1021",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1021",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "RDP session from FS-01 to FIN-APP-02, two machines that have never connected before, at 2 AM."
+    },
+    {
+      "id": "T-021",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Logins for 'divya.t' from Bengaluru and Sao Paulo within minutes; the second came from the corporate VPN exit node in Sao Paulo."
+    },
+    {
+      "id": "T-022",
+      "category": "ransomware",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1486",
+        "severity": "critical"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1486",
+        "severity": "critical",
+        "confidence": 0.9
+      },
+      "description": "5983 files renamed with a .locked extension on DEV-WS-22 within 6 minutes. A ransom note file appeared."
+    },
+    {
+      "id": "T-023",
+      "category": "phishing",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "low",
+        "confidence": 0.8
+      },
+      "description": "User clicked a link in the company's own phishing-awareness simulation email from the security team."
+    },
+    {
+      "id": "T-024",
+      "category": "ransomware",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1486",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "2295 files renamed with a .bak extension on FS-01 by the nightly backup job during its scheduled window."
+    },
+    {
+      "id": "T-025",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Word opened on FS-01 and launched PowerShell with an encoded command."
+    },
+    {
+      "id": "T-026",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1110",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "180 failed logins for user 'vikram.n' from one external IP in 10 minutes with no successful login."
+    },
+    {
+      "id": "T-027",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'divya.t' from Dallas, then another from Hanoi 32 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-028",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1566",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page."
+    },
+    {
+      "id": "T-029",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": null,
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Admin privileges granted to 'priya.s' during the approved change window under ticket CHG-3546, approved by their manager."
+    },
+    {
+      "id": "T-030",
+      "category": "powershell",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": true,
+        "technique": "T1059",
+        "severity": "low",
+        "confidence": 0.8
+      },
+      "description": "PowerShell script run on FS-01 by the approved software deployment service during the scheduled patch window."
+    },
+    {
+      "id": "T-031",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Excel macro on DB-03 spawned cmd.exe, which ran PowerShell with a base64-encoded payload."
+    },
+    {
+      "id": "T-032",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "204 failed logins for user 'svc-finance' from one external IP in 5 minutes followed by a successful login."
+    },
+    {
+      "id": "T-033",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.8
+      },
+      "description": "74 failed logins for user 'priya.s' from one external IP in 10 minutes followed by a successful login."
+    },
+    {
+      "id": "T-034",
+      "category": "phishing",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "low",
+        "confidence": 0.8
+      },
+      "description": "User clicked a link in the company's own phishing-awareness simulation email from the security team."
+    },
+    {
+      "id": "T-035",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1110",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "128 failed logins for user 'admin' from one external IP in 2 minutes with no successful login."
+    },
+    {
+      "id": "T-036",
+      "category": "remote_services",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1021",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1021",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "RDP session from DEV-WS-22 to FS-01, two machines that have never connected before, at 2 AM."
+    },
+    {
+      "id": "T-037",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.8
+      },
+      "description": "82 failed logins for user 'priya.s' from one external IP in 2 minutes followed by a successful login."
+    },
+    {
+      "id": "T-038",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1078",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Logins for 'vikram.n' from Bengaluru and Sao Paulo within minutes; the second came from the corporate VPN exit node in Sao Paulo."
+    },
+    {
+      "id": "T-039",
+      "category": "remote_services",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1021",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1021",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "RDP session from DEV-WS-22 to DB-03, two machines that have never connected before, at 2 AM."
+    },
+    {
+      "id": "T-040",
+      "category": "ransomware",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1486",
+        "severity": "critical"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1486",
+        "severity": "critical",
+        "confidence": 0.9
+      },
+      "description": "1798 files renamed with a .locked extension on WEB-05 within 7 minutes. A ransom note file appeared."
+    },
+    {
+      "id": "T-041",
+      "category": "powershell",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": null,
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "IT admin ran a signed maintenance script on FIN-APP-02 from the management server under change ticket CHG-5345."
+    },
+    {
+      "id": "T-042",
+      "category": "phishing",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "User opened a link in an email from 'docusign.com' (verified sender, SPF and DKIM pass) about a scheduled document signature."
+    },
+    {
+      "id": "T-043",
+      "category": "impossible_travel",
+      "expected": {
+        "false_positive": false,
+        "escalate": false,
+        "technique": "T1078",
+        "severity": "medium"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Successful login for 'lakshmi.p' from Mumbai, then another from Lagos 24 minutes later. No VPN in use."
+    },
+    {
+      "id": "T-044",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Word opened on HR-LAP-14 and launched PowerShell with an encoded command."
+    },
+    {
+      "id": "T-045",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": null,
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "Admin privileges granted to 'ravi.k' during the approved change window under ticket CHG-2891, approved by their manager."
+    },
+    {
+      "id": "T-046",
+      "category": "powershell",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": false,
+        "technique": "T1021",
+        "severity": "medium",
+        "confidence": 0.7
+      },
+      "description": "IT admin ran a signed maintenance script on DB-03 from the management server under change ticket CHG-3697."
+    },
+    {
+      "id": "T-047",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": true,
+        "technique": "T1110",
+        "severity": "medium",
+        "confidence": 0.8
+      },
+      "description": "5 failed logins over 30 minutes from the office network, then a successful login. User reported forgetting the password."
+    },
+    {
+      "id": "T-048",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1566",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "Email from 'g00gle-docs.org' with urgent request to verify account. Look-alike domain. The user entered their password on the page."
+    },
+    {
+      "id": "T-049",
+      "category": "phishing",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1566",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1566",
+        "severity": "high",
+        "confidence": 0.9
+      },
+      "description": "Email from 'amaz0n-verify.com' with urgent request to verify account. Look-alike domain. The user entered their password on the page."
+    },
+    {
+      "id": "T-050",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Word opened on DEV-WS-22 and launched PowerShell with an encoded command."
+    },
+    {
+      "id": "T-051",
+      "category": "privilege_change",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1078",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1078",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Admin privileges granted to 'karthik.v' at 3 AM, outside any change window, with no ticket."
+    },
+    {
+      "id": "T-052",
+      "category": "brute_force",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1110",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1110",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "144 failed logins for user 'sana.f' from one external IP in 3 minutes followed by a successful login."
+    },
+    {
+      "id": "T-053",
+      "category": "powershell",
+      "expected": {
+        "false_positive": false,
+        "escalate": true,
+        "technique": "T1059",
+        "severity": "high"
+      },
+      "pred": {
+        "escalate": true,
+        "false_positive": false,
+        "technique": "T1059",
+        "severity": "high",
+        "confidence": 0.8
+      },
+      "description": "Excel macro on DEV-WS-22 spawned cmd.exe, which ran PowerShell with a base64-encoded payload."
+    },
+    {
+      "id": "T-054",
+      "category": "powershell",
+      "expected": {
+        "false_positive": true,
+        "escalate": false,
+        "technique": null,
+        "severity": "low"
+      },
+      "pred": {
+        "escalate": false,
+        "false_positive": true,
+        "technique": "T1059",
+        "severity": "low",
+        "confidence": 0.7
+      },
+      "description": "PowerShell script run on FIN-APP-02 by the approved software deployment service during the scheduled patch window."
+    }
+  ]
+}
