@@ -1,3 +1,4 @@
+
 # Security Copilot (prototype)
 
 An AI assistant for a security team, built to learn the SOC workflow. **All data is simulated. Jira is a mock unless you configure real credentials.** It is a learning prototype, not a production system.
@@ -47,3 +48,6 @@ See STEPS.md. Interview preparation is in INTERVIEW_PREP.md.
 
 ## Roadmap
 Phishing analyzer, vulnerability prioritizer (CVSS + asset context), larger evaluation set, real SIEM alert ingestion.
+
+# security-copilot
+
